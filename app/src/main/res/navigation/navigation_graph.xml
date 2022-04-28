@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MainViewFragment">
+
+    <fragment
+        android:id="@+id/MainViewFragment"
+        android:name="com.example.mphasis.ui.MainViewFragment"
+        android:label="NYCSchools"
+        tools:layout="@layout/fragment_main_view" >
+        <action
+            android:id="@+id/action_mainView_to_schoolsList"
+            app:destination="@id/SchoolsListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/SchoolsListFragment"
+        android:name="com.example.mphasis.ui.SchoolsListFragment"
+        android:label="NYC High Schools"
+        tools:layout="@layout/fragment_schools_list" >
+        <action
+            android:id="@+id/action_schoolsList_to_schoolDetails"
+            app:destination="@id/SchoolDetailsFragment"
+            app:enterAnim="@anim/fade_in_anim"
+            app:exitAnim="@anim/fade_out_anim"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/SchoolDetailsFragment"
+        android:name="com.example.mphasis.ui.SchoolDetailsFragment"
+        android:label="School Details"
+        tools:layout="@layout/fragment_school_details" />
+</navigation>
